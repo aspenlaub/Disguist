@@ -10,6 +10,7 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AssemblyName>Aspenlaub.Net.GitHub.CSharp.Disguist</AssemblyName>
     <RootNamespace>Aspenlaub.Net.GitHub.CSharp.Disguist</RootNamespace>
+    <ApplicationIcon>disguist.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">

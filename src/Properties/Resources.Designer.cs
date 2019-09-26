@@ -59,5 +59,15 @@ namespace Aspenlaub.Net.GitHub.CSharp.Disguist.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon disguist {
+            get {
+                object obj = ResourceManager.GetObject("disguist", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }
