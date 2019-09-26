@@ -16,6 +16,23 @@
     <NuspecFile>Disguist.nuspec</NuspecFile>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Components\**" />
+    <EmbeddedResource Remove="Components\**" />
+    <None Remove="Components\**" />
+    <Page Remove="Components\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="disguist.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Components\Disguist.Components.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="disguist.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

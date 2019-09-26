@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Aspenlaub.Net.GitHub.CSharp.Disguist.Components</AssemblyName>
+    <RootNamespace>Aspenlaub.Net.GitHub.CSharp.Disguist.Components</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspenlaub.Net.GitHub.CSharp.Pegh" Version="1.0.7205.32135" />
+  </ItemGroup>
+
+</Project>
