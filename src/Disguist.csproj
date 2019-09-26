@@ -17,9 +17,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Components\**" />
+    <Compile Remove="Test\**" />
     <EmbeddedResource Remove="Components\**" />
+    <EmbeddedResource Remove="Test\**" />
     <None Remove="Components\**" />
+    <None Remove="Test\**" />
     <Page Remove="Components\**" />
+    <Page Remove="Test\**" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="disguist.ico" />
