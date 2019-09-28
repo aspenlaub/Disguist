@@ -14,6 +14,7 @@ namespace Aspenlaub.Net.GitHub.CSharp.Disguist {
         public DisguistWindow() {
             InitializeComponent();
             vWordDisguiser = new WordDisguiser();
+            Title = Properties.Resources.WindowTitle;
         }
 
         private void Window_Initialized(object sender, EventArgs e) {

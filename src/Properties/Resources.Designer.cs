@@ -59,5 +59,14 @@ namespace Aspenlaub.Net.GitHub.CSharp.Disguist.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disguist.
+        /// </summary>
+        internal static string WindowTitle {
+            get {
+                return ResourceManager.GetString("WindowTitle", resourceCulture);
+            }
+        }
     }
 }
