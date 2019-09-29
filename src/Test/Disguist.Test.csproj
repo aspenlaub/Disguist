@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
-    <UseWPF>true</UseWPF>
     <IsPackable>false</IsPackable>
     <AssemblyName>Aspenlaub.Net.GitHub.CSharp.Disguist.Test</AssemblyName>
     <RootNamespace>Aspenlaub.Net.GitHub.CSharp.Disguist.Test</RootNamespace>
@@ -13,7 +12,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'" />
   <ItemGroup>
-    <PackageReference Include="Aspenlaub.Net.GitHub.CSharp.Paleface" Version="1.0.7210.29245" />
+    <PackageReference Include="Aspenlaub.Net.GitHub.CSharp.Paleface" Version="1.0.7211.22560" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.3.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="2.0.0" />
     <PackageReference Include="MSTest.TestFramework" Version="2.0.0" />
