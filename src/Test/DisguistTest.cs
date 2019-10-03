@@ -15,7 +15,7 @@ namespace Aspenlaub.Net.GitHub.CSharp.Disguist.Test {
                 .Replace(@"\netcoreapp3.0", "");
             Assert.IsTrue(File.Exists(executableFile));
             // ReSharper disable once UnusedVariable
-            using var sut = new Window(executableFile, Resources.WindowTitle, () => { });
+            using var sut = new WindowsElement(executableFile, Resources.WindowTitle, () => { });
         }
     }
 }
