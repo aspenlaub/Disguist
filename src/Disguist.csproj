@@ -17,20 +17,13 @@
     <NuspecFile>Disguist.nuspec</NuspecFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="Components\**" />
     <Compile Remove="Test\**" />
-    <EmbeddedResource Remove="Components\**" />
     <EmbeddedResource Remove="Test\**" />
-    <None Remove="Components\**" />
     <None Remove="Test\**" />
-    <Page Remove="Components\**" />
     <Page Remove="Test\**" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="disguist.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Components\Disguist.Components.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="disguist.ico">
@@ -49,5 +42,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Aspenlaub.Net.GitHub.CSharp.Pegh" Version="1.0.7221.28657" />
   </ItemGroup>
 </Project>

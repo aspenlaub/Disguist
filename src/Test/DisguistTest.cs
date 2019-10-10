@@ -1,11 +1,18 @@
 ﻿using System.IO;
-using Aspenlaub.Net.GitHub.CSharp.Paleface;
+using Aspenlaub.Net.GitHub.CSharp.Paleface.Components;
+using Aspenlaub.Net.GitHub.CSharp.Paleface.Interfaces;
+using Autofac;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Resources = Aspenlaub.Net.GitHub.CSharp.Disguist.Properties.Resources;
 
 namespace Aspenlaub.Net.GitHub.CSharp.Disguist.Test {
     [TestClass]
     public class DisguistTest {
+        private readonly IContainer vContainer;
+
+        public DisguistTest() {
+            vContainer = new ContainerBuilder().UsePaleface().Build();
+        }
 
         [TestMethod]
         public void ThereIsADisguistWindow() {
@@ -15,7 +22,16 @@ namespace Aspenlaub.Net.GitHub.CSharp.Disguist.Test {
                 .Replace(@"\netcoreapp3.0", "");
             Assert.IsTrue(File.Exists(executableFile));
             // ReSharper disable once UnusedVariable
-            using var sut = new WindowsElement(executableFile, Resources.WindowTitle, () => { });
+            using var sut = vContainer.Resolve<IAppiumSession>();
+            sut.Initialize(executableFile, Resources.WindowTitle, () => { });
+            var wordTextBox = sut.FindTextBox("Word");
+            Assert.IsNotNull(wordTextBox);
+            const string testWord = "A performer in disguise";
+            wordTextBox.Text = testWord;
+            Assert.AreEqual(wordTextBox.Text.Length, testWord.Length);
+            var disguistWordTextBox = sut.FindTextBox("DisguistWord");
+            Assert.IsNotNull(disguistWordTextBox);
+            Assert.IsFalse(string.IsNullOrWhiteSpace(disguistWordTextBox.Text));
         }
     }
 }

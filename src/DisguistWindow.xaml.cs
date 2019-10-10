@@ -2,6 +2,8 @@
 using System.Linq;
 using System.Windows;
 using Aspenlaub.Net.GitHub.CSharp.Disguist.Components;
+using Aspenlaub.Net.GitHub.CSharp.Disguist.Interfaces;
+using Autofac;
 
 namespace Aspenlaub.Net.GitHub.CSharp.Disguist {
     /// <summary>
@@ -9,11 +11,11 @@ namespace Aspenlaub.Net.GitHub.CSharp.Disguist {
     /// </summary>
     // ReSharper disable once UnusedMember.Global
     public partial class DisguistWindow {
-        private readonly WordDisguiser vWordDisguiser;
+        private readonly IContainer vContainer;
 
         public DisguistWindow() {
             InitializeComponent();
-            vWordDisguiser = new WordDisguiser();
+            vContainer = new ContainerBuilder().UseDisguistAndPegh().Build();
             Title = Properties.Resources.WindowTitle;
         }
 
@@ -27,7 +29,7 @@ namespace Aspenlaub.Net.GitHub.CSharp.Disguist {
         }
 
         private async void Word_PasswordChangedAsync(object sender, RoutedEventArgs e) {
-            var result = await vWordDisguiser.DisguiseWordAsync(Word.Password);
+            var result = await vContainer.Resolve<IWordDisguiser>().DisguiseWordAsync(Word.Password);
             if (result.Errors.Any()) {
                 throw new Exception(string.Join("\r\n", result.Errors));
             }
