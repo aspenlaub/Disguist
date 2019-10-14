@@ -5,7 +5,7 @@ using Autofac;
 namespace Aspenlaub.Net.GitHub.CSharp.Disguist.Components {
     public static class DisguistContainerBuilder {
         public static ContainerBuilder UseDisguistAndPegh(this ContainerBuilder builder) {
-            builder.RegisterForPegh(new DummyCsArgumentPrompter());
+            builder.UsePegh(new DummyCsArgumentPrompter());
             builder.RegisterType<WordDisguiser>().As<IWordDisguiser>();
             return builder;
         }
