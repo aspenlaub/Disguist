@@ -1,6 +1,9 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.Threading.Tasks;
 using Aspenlaub.Net.GitHub.CSharp.Paleface.Components;
 using Aspenlaub.Net.GitHub.CSharp.Paleface.Interfaces;
+using Aspenlaub.Net.GitHub.CSharp.Pegh.Helpers;
 using Autofac;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Resources = Aspenlaub.Net.GitHub.CSharp.Disguist.Properties.Resources;
@@ -26,8 +29,9 @@ namespace Aspenlaub.Net.GitHub.CSharp.Disguist.Test {
             sut.Initialize(executableFile, Resources.WindowTitle, () => { }, 10);
             var wordTextBox = sut.FindTextBox("Word");
             Assert.IsNotNull(wordTextBox);
-            const string testWord = "A performer in disguise";
+            const string testWord = "A performer in disguise (a performer in disguise)";
             wordTextBox.Text = testWord;
+            Wait.Until(() => wordTextBox.Text.Length == testWord.Length, TimeSpan.FromSeconds(10));
             Assert.AreEqual(wordTextBox.Text.Length, testWord.Length);
             var disguistWordTextBox = sut.FindTextBox("DisguistWord");
             Assert.IsNotNull(disguistWordTextBox);

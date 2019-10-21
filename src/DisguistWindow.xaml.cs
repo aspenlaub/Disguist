@@ -12,6 +12,7 @@ namespace Aspenlaub.Net.GitHub.CSharp.Disguist {
     // ReSharper disable once UnusedMember.Global
     public partial class DisguistWindow {
         private readonly IContainer vContainer;
+        private readonly object vLockObject = new object();
 
         public DisguistWindow() {
             InitializeComponent();
@@ -33,8 +34,10 @@ namespace Aspenlaub.Net.GitHub.CSharp.Disguist {
             if (result.Errors.Any()) {
                 throw new Exception(string.Join("\r\n", result.Errors));
             }
-            DisguistWord.Text = result.DisguisedWord;
-            SetButtonAccess();
+            lock (vLockObject) {
+                DisguistWord.Text = result.DisguisedWord;
+                SetButtonAccess();
+            }
         }
 
         private void CopyButton_OnClick(object sender, RoutedEventArgs e) {
