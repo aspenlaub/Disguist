@@ -23,7 +23,7 @@ namespace Aspenlaub.Net.GitHub.CSharp.Disguist.Test {
             Assert.IsTrue(File.Exists(executableFile));
             // ReSharper disable once UnusedVariable
             using var sut = vContainer.Resolve<IAppiumSession>();
-            sut.Initialize(executableFile, Resources.WindowTitle, () => { });
+            sut.Initialize(executableFile, Resources.WindowTitle, () => { }, 10);
             var wordTextBox = sut.FindTextBox("Word");
             Assert.IsNotNull(wordTextBox);
             const string testWord = "A performer in disguise";
