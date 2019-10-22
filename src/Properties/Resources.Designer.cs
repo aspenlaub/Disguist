@@ -8,6 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("Aspenlaub.Net.GitHub.CSharp.Disguist.Test")]
 namespace Aspenlaub.Net.GitHub.CSharp.Disguist.Properties {
     using System;
     
