@@ -21,7 +21,7 @@
             <Label Grid.Row="0" Grid.Column="0" Padding="3">Word</Label>
             <PasswordBox Grid.Row="0" Grid.Column="1" Name="Word" Margin="3" Background="LightGray" PasswordChanged="Word_PasswordChangedAsync" AutomationProperties.Name="Word" />
             <Label Grid.Row="1" Grid.Column="0" Padding="3">Disguist</Label>
-            <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Margin="3" Name="DisguistWord" Background="LightGray" AutomationProperties.Name="DisguistWprd" />
+            <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Margin="3" Name="DisguistWord" Background="LightGray" AutomationProperties.Name="DisguistWord" />
             <Button Name="CopyButton" Grid.Row="0" Grid.Column="3" Margin="3" Click="CopyButton_OnClick">_Copy</Button>
         </Grid>
     </Grid>

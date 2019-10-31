@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
-using System.Threading.Tasks;
 using Aspenlaub.Net.GitHub.CSharp.Paleface.Components;
+using Aspenlaub.Net.GitHub.CSharp.Paleface.Helpers;
 using Aspenlaub.Net.GitHub.CSharp.Paleface.Interfaces;
 using Aspenlaub.Net.GitHub.CSharp.Pegh.Helpers;
 using Autofac;
@@ -15,6 +15,17 @@ namespace Aspenlaub.Net.GitHub.CSharp.Disguist.Test {
 
         public DisguistTest() {
             vContainer = new ContainerBuilder().UsePaleface().Build();
+        }
+
+        [TestInitialize]
+        public void Initialize() {
+            TestProcessHelper.ShutDownRunningProcesses(TestProcessHelper.ProcessType.Paleface);
+            TestProcessHelper.LaunchProcess(TestProcessHelper.ProcessType.Paleface);
+        }
+
+        [TestCleanup]
+        public void CleanUp() {
+            TestProcessHelper.ShutDownRunningProcesses(TestProcessHelper.ProcessType.Paleface);
         }
 
         [TestMethod]
