@@ -20,7 +20,7 @@ namespace Aspenlaub.Net.GitHub.CSharp.Disguist.Test {
         [TestInitialize]
         public void Initialize() {
             TestProcessHelper.ShutDownRunningProcesses(TestProcessHelper.ProcessType.Paleface);
-            TestProcessHelper.LaunchProcess(TestProcessHelper.ProcessType.Paleface);
+            TestProcessHelper.LaunchProcessAsync(TestProcessHelper.ProcessType.Paleface).Wait();
         }
 
         [TestCleanup]
