@@ -22,7 +22,7 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="3.4.3" />
     <PackageReference Include="MSTest.TestFramework" Version="3.4.3" />
-    <PackageReference Include="Paleface" Version="2.0.1775.590" />
+    <PackageReference Include="Paleface" Version="2.0.1800.1141" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Disguist.csproj" />
