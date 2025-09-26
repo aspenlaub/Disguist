@@ -20,9 +20,9 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
-    <PackageReference Include="MSTest.TestAdapter" Version="3.10.3" />
-    <PackageReference Include="MSTest.TestFramework" Version="3.10.3" />
-    <PackageReference Include="Paleface" Version="2.0.2217.998" />
+    <PackageReference Include="MSTest.TestAdapter" Version="3.10.4" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.10.4" />
+    <PackageReference Include="Paleface" Version="2.0.2247.460" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Disguist.csproj" />
