@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Disguist.csproj" />
+  <Project Path="Test/Disguist.Test.csproj" />
+</Solution>
