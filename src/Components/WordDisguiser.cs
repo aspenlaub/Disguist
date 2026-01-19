@@ -6,19 +6,11 @@ using Aspenlaub.Net.GitHub.CSharp.Pegh.Interfaces;
 
 namespace Aspenlaub.Net.GitHub.CSharp.Disguist.Components;
 
-public class WordDisguiser : IWordDisguiser {
-    private readonly IDisguiser vDisguiser;
-    private readonly ISecretRepository vSecretRepository;
-
-    public WordDisguiser(IDisguiser disguiser, ISecretRepository secretRepository) {
-        vDisguiser = disguiser;
-        vSecretRepository = secretRepository;
-    }
-
+public class WordDisguiser(IDisguiser disguiser, ISecretRepository secretRepository) : IWordDisguiser {
     public async Task<WordDisguiserResult> DisguiseWordAsync(string word) {
         var errorsAndInfos = new ErrorsAndInfos();
         var result = new WordDisguiserResult {
-            DisguisedWord = await vDisguiser.Disguise(vSecretRepository, word, errorsAndInfos),
+            DisguisedWord = await disguiser.Disguise(secretRepository, word, errorsAndInfos),
             Errors = errorsAndInfos.Errors
         };
         return result;

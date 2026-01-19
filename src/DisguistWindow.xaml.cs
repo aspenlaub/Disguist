@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 using System.Windows;
 using Aspenlaub.Net.GitHub.CSharp.Disguist.Components;
+using Aspenlaub.Net.GitHub.CSharp.Disguist.Entities;
 using Aspenlaub.Net.GitHub.CSharp.Disguist.Interfaces;
 using Autofac;
 
@@ -13,7 +15,7 @@ namespace Aspenlaub.Net.GitHub.CSharp.Disguist;
 // ReSharper disable once UnusedMember.Global
 public partial class DisguistWindow {
     private readonly IContainer vContainer;
-    private readonly object vLockObject = new object();
+    private readonly Lock vLockObject = new();
 
     public DisguistWindow() {
         InitializeComponent();
@@ -31,7 +33,7 @@ public partial class DisguistWindow {
     }
 
     private async void Word_PasswordChangedAsync(object sender, RoutedEventArgs e) {
-        var result = await vContainer.Resolve<IWordDisguiser>().DisguiseWordAsync(Word.Password);
+        WordDisguiserResult result = await vContainer.Resolve<IWordDisguiser>().DisguiseWordAsync(Word.Password);
         if (result.Errors.Any()) {
             throw new Exception(string.Join("\r\n", result.Errors));
         }
