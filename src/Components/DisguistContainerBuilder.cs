@@ -6,7 +6,7 @@ namespace Aspenlaub.Net.GitHub.CSharp.Disguist.Components;
 
 public static class DisguistContainerBuilder {
     public static ContainerBuilder UseDisguistAndPegh(this ContainerBuilder builder) {
-        builder.UsePegh("Disguist", new DummyCsArgumentPrompter());
+        builder.UsePegh("Disguist");
         builder.RegisterType<WordDisguiser>().As<IWordDisguiser>();
         return builder;
     }
