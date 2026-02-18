@@ -1,8 +1,8 @@
 using System.Threading.Tasks;
 using Aspenlaub.Net.GitHub.CSharp.Disguist.Entities;
 using Aspenlaub.Net.GitHub.CSharp.Disguist.Interfaces;
-using Aspenlaub.Net.GitHub.CSharp.Pegh.Entities;
 using Aspenlaub.Net.GitHub.CSharp.Pegh.Interfaces;
+using Aspenlaub.Net.GitHub.CSharp.Skladasu.Entities;
 
 namespace Aspenlaub.Net.GitHub.CSharp.Disguist.Components;
 
